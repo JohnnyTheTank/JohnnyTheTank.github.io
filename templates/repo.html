@@ -1,0 +1,12 @@
+<div>
+    <div ng-repeat="item in outerResults">
+        <h3><a ng-href="{{item.url}}" target="_blank">
+            <strong>{{item.name}}</strong>
+        </a></h3>
+        <p>
+            {{item.description}}
+            <br>
+            Stars: {{item.stargazers | number}} &nbsp; Forks: {{item.forks | number}}
+        </p>
+    </div>
+</div>

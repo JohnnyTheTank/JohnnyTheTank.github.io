@@ -48,10 +48,18 @@
 
 <div class="container">
 
-    <aping model="repo"
-           items="20"
-           aping-github="[{'user':'JohnnyTheTank'}]">
-        <pre>{{results | json}}</pre>
+    <h1>JohnnyTheTank</h1>
+    <br>
+    <h2>GitHub Projects </h2>
+
+    <aping
+            template-url="templates/repo.html"
+            model="repo"
+            items="100"
+            order-by="stargazers"
+            order-reverse="true"
+            result-value="outerResults"
+            aping-github="[{'user':'JohnnyTheTank'}]">
     </aping>
 
 </div>
