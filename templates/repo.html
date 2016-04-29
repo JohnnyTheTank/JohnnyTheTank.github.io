@@ -1,11 +1,15 @@
-<div>
-    <div ng-repeat="item in outerResults">
-        <h3><a ng-href="{{item.url}}" target="_blank">
-            <strong>{{item.name}}</strong>
-        </a></h3>
-        <p>
+<div class="repo">
+    <div ng-repeat="item in outerResults" class="box">
+        <h3 class="offset-bottom">
+            <a ng-href="{{item.url}}" target="_blank">
+                {{item.name}}
+            </a>
+            <span ng-if="{{item.isFork}}">Fork</span>
+        </h3>
+        <p ng-show="item.description" class="offset-bottom">
             {{item.description}}
-            <br>
+        </p>
+        <p class="text-muted">
             Stars: {{item.stargazers | number}} &nbsp; Forks: {{item.forks | number}}
         </p>
     </div>

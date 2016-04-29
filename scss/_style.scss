@@ -1,0 +1,29 @@
+$vibrant: white;
+$muted: #DDD;
+
+$offset: 10px;
+
+.offset-bottom {
+    margin-bottom: $offset;
+}
+
+.padding {
+    padding: $offset;
+}
+
+body {
+    background-color: $vibrant;
+}
+
+.no-offsets {
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @extend .no-offsets;
+}
+
+p {
+    @extend .no-offsets;
+}
