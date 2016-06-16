@@ -1,7 +1,7 @@
 <div class="aping-social">
     <div class="bricklayer">
         <div class="box" bricklayer-append ng-repeat="item in twitterResults" ng-cloak>
-            {{item.text}}
+            <p ng-bind="item.text" linkify="twitter"></p>
             <p class="text-right">
                 <a href="{{item.post_url}}" target="_blank">
                     <i class="fa fa-twitter"></i>
