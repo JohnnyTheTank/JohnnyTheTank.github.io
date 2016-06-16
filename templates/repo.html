@@ -1,16 +1,20 @@
 <div class="aping-repo">
     <div ng-repeat="item in outerResults" class="box">
         <h3 class="offset-bottom">
+            <i class="fa fa-file-code-o" ng-if="!item.isFork" aria-hidden="true"></i>
+            <i class="fa fa-code-fork" ng-if="item.isFork" aria-hidden="true"></i>
+
             <a ng-href="{{item.url}}" target="_blank">
                 {{item.name}}
             </a>
-            <span ng-if="{{item.isFork}}">Fork</span>
+
+            <a class="homepage-link text-muted" ng-if="item.homepage" ng-href="{{item.homepage}}" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a>
         </h3>
-        <p ng-show="item.description" class="offset-bottom">
+        <p ng-if="item.description" class="offset-bottom">
             {{item.description}}
         </p>
         <p class="text-muted">
-            Stars: {{item.stargazers | number}} &nbsp; Forks: {{item.forks | number}}
+            <i class="fa fa-star" aria-hidden="true"></i> Stars: {{item.stargazers | number}} &nbsp;&nbsp; <i class="fa fa-code-fork" aria-hidden="true"></i> Forks: {{item.forks | number}}
         </p>
     </div>
 </div>

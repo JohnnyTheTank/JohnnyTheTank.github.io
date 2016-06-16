@@ -3,5 +3,13 @@
         border: 1px solid $muted;
         padding: $offset;
         margin: $offset 0;
+
+        a {
+            &.homepage-link {
+                font-size:1.3rem;
+                vertical-align: text-top;
+                line-height: 2rem;
+            }
+        }
     }
 }

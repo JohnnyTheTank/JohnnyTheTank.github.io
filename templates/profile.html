@@ -1,5 +1,9 @@
 <div class="aping-profile">
     <div ng-repeat="item in results" class="profile-row">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa fa-stack-1x" ng-class="item.class"></i>
+        </span>
         <strong>{{item.platform}}:</strong> <a ng-href="{{item.url}}" target="_blank">{{item.name}}</a>
     </div>
 </div>
