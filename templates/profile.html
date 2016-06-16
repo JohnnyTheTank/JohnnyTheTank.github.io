@@ -1,9 +1,41 @@
 <div class="aping-profile">
+    <h2>Profiles</h2>
+
     <div ng-repeat="item in results" class="profile-row">
         <span class="fa-stack fa-lg">
-          <i class="fa fa-square-o fa-stack-2x"></i>
-          <i class="fa fa-stack-1x" ng-class="item.class"></i>
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-stack-1x" ng-class="item.class"></i>
         </span>
         <strong>{{item.platform}}:</strong> <a ng-href="{{item.url}}" target="_blank">{{item.name}}</a>
     </div>
+
+    <div ng-repeat="item in results">
+        <div ng-if="item.platform=='GitHub'">
+            <br><br>
+            <h2>Top GitHub Projects</h2>
+            <aping
+                    template-url="templates/repo.html"
+                    model="repo"
+                    items="100"
+                    order-by="stargazers"
+                    order-reverse="true"
+                    result-name="githubResults"
+                    aping-github="[{'user':'{{item.name}}'}]">
+            </aping>
+        </div>
+
+        <div ng-if="item.platform=='Twitter'">
+            <br><br>
+            <h2>Last Tweets</h2>
+            <aping
+                    template-url="templates/social.html"
+                    model="social"
+                    items="25"
+                    result-name="twitterResults"
+                    aping-codebird="[{'user':'{{item.name}}', 'showAvatar':'no', 'exclude_replies':true}]">
+                <pre>{{twitterResults | json}}</pre>
+            </aping>
+        </div>
+    </div>
+
 </div>

@@ -1,5 +1,5 @@
 <div class="aping-repo">
-    <div ng-repeat="item in outerResults" class="box">
+    <div ng-repeat="item in githubResults | limitTo: 5" class="box">
         <h3 class="offset-bottom">
             <i class="fa fa-file-code-o" ng-if="!item.isFork" aria-hidden="true"></i>
             <i class="fa fa-code-fork" ng-if="item.isFork" aria-hidden="true"></i>
@@ -8,7 +8,9 @@
                 {{item.name}}
             </a>
 
-            <a class="homepage-link text-muted" ng-if="item.homepage" ng-href="{{item.homepage}}" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+            <a class="homepage-link text-muted" ng-if="item.homepage" ng-href="{{item.homepage}}" target="_blank">
+                <i class="fa fa-external-link" aria-hidden="true"></i>
+            </a>
         </h3>
         <p ng-if="item.description" class="offset-bottom">
             {{item.description}}
