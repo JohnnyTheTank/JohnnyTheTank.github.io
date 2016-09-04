@@ -1,1 +1,1 @@
-angular.module('app', ['jtt_aping', 'jtt_aping_github', 'jtt_aping_codebird', 'jtt_bricklayer', 'linkify']);
+angular.module('app', ['jtt_aping', 'jtt_aping_github', 'jtt_aping_codebird', 'jtt_aping_rss', 'jtt_bricklayer', 'linkify']);

@@ -1,0 +1,23 @@
+.aping-rss {
+
+    .box {
+        margin: 0;
+        padding: 10px;
+        border: 1px solid $muted;
+        overflow:hidden;
+
+        &+.box {
+            border-top:none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        font-size:0.9em;
+
+        i {
+            font-size:2rem;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+<div class="aping-rss">
+    <div class="box" ng-repeat="item in rssResults" ng-cloak>
+        <p>
+            <a href="{{item.post_url}}" target="_blank">
+                <i class="fa fa-github"></i>
+            </a>
+            &nbsp;
+            <span ng-bind="item.text" linkify></span>
+        </p>
+    </div>
+</div>

@@ -36,6 +36,18 @@
                 <pre>{{twitterResults | json}}</pre>
             </aping>
         </div>
+
+        <div ng-if="item.platform=='GitHub'">
+            <br><br>
+            <h2>Public GitHub Activity (RSS)</h2>
+            <aping
+                    template-url="templates/rss.html"
+                    model="social"
+                    items="5"
+                    result-name="rssResults"
+                    aping-rss="[{'path':'https://github.com/{{item.name}}.atom'}]">
+            </aping>
+        </div>
     </div>
 
 </div>
