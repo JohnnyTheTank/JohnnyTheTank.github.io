@@ -1,26 +1,26 @@
-[
-  {
+{
+  "github": {
     "platform": "GitHub",
     "class": "fa-github",
     "name": "JohnnyTheTank",
     "url": "https://github.com/JohnnyTheTank"
   },
-  {
+  "twitter": {
     "platform": "Twitter",
     "class": "fa-twitter",
     "name": "johnnyzeitlos",
     "url": "https://twitter.com/johnnyzeitlos"
   },
-  {
+  "xing": {
     "platform": "Xing",
     "class": "fa-xing",
     "name": "Jonathan_Hornung",
     "url": "https://www.xing.com/profile/Jonathan_Hornung"
   },
-  {
+  "wikipedia": {
     "platform": "Wikipedia",
     "class": "fa-wikipedia-w",
     "name": "Jonathan Hornung",
     "url": "https://de.wikipedia.org/wiki/Benutzer:Jonathan_Hornung"
   }
-]
+}

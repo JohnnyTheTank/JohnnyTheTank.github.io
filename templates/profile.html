@@ -1,16 +1,21 @@
 <div class="aping-profile">
-    <h2>Profiles</h2>
 
-    <div ng-repeat="item in results" class="profile-row">
-        <span class="fa-stack fa-lg">
-            <i class="fa fa-square-o fa-stack-2x"></i>
-            <i class="fa fa-stack-1x" ng-class="item.class"></i>
-        </span>
-        <strong>{{item.platform}}:</strong> <a ng-href="{{item.url}}" target="_blank">{{item.name}}</a>
+    <div class="block-grid-xs-2 block-grid-sm-2 block-grid-md-4">
+        <div ng-repeat="item in results[0]" class="profile-row">
+            <a ng-href="{{item.url}}" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-stack-1x" ng-class="item.class"></i>
+                </span>
+                <strong>{{item.platform}}</strong>
+            </a>
+
+        </div>
     </div>
 
-    <div ng-repeat="item in results">
-        <div ng-if="item.platform=='GitHub'">
+
+    <div class="row">
+        <div ng-if="results[0].github" class="col-sm-7">
             <br><br>
             <h2>Top GitHub Projects</h2>
             <aping
@@ -20,34 +25,35 @@
                     order-by="stargazers"
                     order-reverse="true"
                     result-name="githubResults"
-                    aping-github="[{'user':'{{item.name}}'}]">
+                    aping-github="[{'user':'{{results[0].github.name}}'}]">
             </aping>
         </div>
 
-        <div ng-if="item.platform=='Twitter'">
-            <br><br>
-            <h2>Last Tweets</h2>
-            <aping
-                    template-url="templates/social.html"
-                    model="social"
-                    items="25"
-                    result-name="twitterResults"
-                    aping-codebird="[{'user':'{{item.name}}', 'showAvatar':'no', 'exclude_replies':true}]">
-                <pre>{{twitterResults | json}}</pre>
-            </aping>
-        </div>
-
-        <div ng-if="item.platform=='GitHub'">
+        <div ng-if="results[0].github" class="col-sm-5">
             <br><br>
             <h2>Public GitHub Activity (RSS)</h2>
             <aping
                     template-url="templates/rss.html"
                     model="social"
-                    items="5"
+                    items="9"
                     result-name="rssResults"
-                    aping-rss="[{'path':'https://github.com/{{item.name}}.atom'}]">
+                    aping-rss="[{'path':'https://github.com/{{results[0].github.name}}.atom'}]">
             </aping>
         </div>
+    </div>
+
+
+    <div ng-if="results[0].twitter">
+        <br><br>
+        <h2>Last Tweets</h2>
+        <aping
+                template-url="templates/social.html"
+                model="social"
+                items="25"
+                result-name="twitterResults"
+                aping-codebird="[{'user':'{{results[0].twitter.name}}', 'showAvatar':'no', 'exclude_replies':true}]">
+            <pre>{{twitterResults | json}}</pre>
+        </aping>
     </div>
 
 </div>

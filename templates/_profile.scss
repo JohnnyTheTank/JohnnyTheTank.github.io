@@ -1,11 +1,15 @@
 .aping-profile {
+
     .profile-row {
-        border: 1px solid $muted;
         padding: $offset;
         margin: 0;
+        text-align: center;
 
-        & + .profile-row {
-            border-top: none;
+        a {
+            &:hover {
+                text-decoration: none;
+            }
         }
     }
+
 }
