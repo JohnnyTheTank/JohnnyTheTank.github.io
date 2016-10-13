@@ -1,4 +1,8 @@
 <div class="aping-social">
+    <div ng-if="twitterResults.length < 1">
+        <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+        <span class="sr-only">Loading...</span>
+    </div>
     <div class="bricklayer">
         <div class="box" bricklayer-append ng-repeat="item in twitterResults" ng-cloak>
             <p ng-bind="item.text" linkify="twitter"></p>

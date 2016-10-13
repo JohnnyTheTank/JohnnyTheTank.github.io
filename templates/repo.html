@@ -1,4 +1,8 @@
 <div class="aping-repo">
+    <div ng-if="githubResults.length < 1">
+        <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+        <span class="sr-only">Loading...</span>
+    </div>
     <div ng-repeat="item in githubResults | limitTo: 5" class="box">
         <h3 class="offset-bottom">
             <i class="fa fa-file-code-o" ng-if="!item.isFork" aria-hidden="true"></i>
